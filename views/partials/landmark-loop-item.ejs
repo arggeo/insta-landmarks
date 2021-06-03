@@ -1,0 +1,12 @@
+<div class="landmark">
+    <figure>
+        <img src="<%= landmark.photo_thumb.url %>" data-lg-img="<%= landmark.photo.url %>" alt="">
+    </figure>
+    <div class="info">
+        <h2><a href="/landmark/<%= landmark.objectId %>"><%= landmark.title %></a></h2>
+        <p><%= landmark.short_info %></p>
+    </div>
+    <% if (locals.userInfo) { %>
+        <a id="edit-landmark" href="/admin/edit-landmark/<%= landmark.objectId %>">&#9998;</a>
+    <% } %>
+</div>

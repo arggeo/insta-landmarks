@@ -1,0 +1,15 @@
+        <div id="footer">
+            <p>Copyright &copy; 2021 - Argy Georgiadis</p>
+        </div>
+        <div id="side-menu">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <% if (locals.userInfo) { %>
+                    <li><a href="/admin/logout">Logout: <%= locals.userInfo.username %></a></li>
+                <% } else { %>
+                    <li><a href="/admin/login">Login</a></li>
+                <% } %>
+            </ul>
+        </div>
+    </body>
+</html>

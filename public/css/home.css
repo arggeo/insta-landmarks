@@ -1,0 +1,108 @@
+.landmark {
+  position: relative;
+  border: 2px dashed #eee;
+  border-radius: 2.5rem;
+  min-height: 20rem;
+  margin-bottom: 2rem;
+  background-color: #f9f9f9;
+  display: flex;
+  flex-direction: column;
+}
+.landmark:last-child {
+  margin-bottom: 0;
+}
+.landmark figure {
+  border-radius: 2rem;
+  overflow: hidden;
+}
+.landmark figure img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  cursor: pointer;
+}
+.landmark .info {
+  padding: 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.landmark a {
+  transition: all 0.2s ease-in-out;
+}
+.landmark h2 {
+  font-size: 3.2rem;
+  color: #e0237d;
+}
+.landmark p {
+  font-size: 2rem;
+}
+
+#popup-container {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.75);
+}
+#popup-container.popup-open {
+  display: flex;
+}
+#popup-container.popup-open figure img {
+  display: inline-block !important;
+}
+#popup-container .popup {
+  position: relative;
+  background-color: #fff;
+  border: 3px solid #fff;
+  border-radius: 2rem;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.75);
+}
+#popup-container .popup figure {
+  border-radius: 2rem;
+}
+#popup-container .popup figure img {
+  display: none;
+  max-width: 75vw;
+  max-height: 75vh;
+}
+#popup-container .popup .close {
+  font-size: 5rem;
+  font-weight: bold;
+  color: #222;
+  text-align: center;
+  line-height: 72px;
+  width: 72px;
+  height: 72px;
+  position: absolute;
+  top: -36px;
+  right: -36px;
+  border: 2px solid #222;
+  border-radius: 50%;
+  background-color: #e0237d;
+  cursor: pointer;
+}
+
+body.popup-open {
+  overflow: hidden;
+}
+
+@media screen and (min-width: 769px) {
+  .landmark {
+    flex-direction: row;
+  }
+  .landmark figure {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    flex: 1 0 40rem;
+    background: #f5f5f5;
+    border-right: 2px dashed #eee;
+  }
+}
+
+/*# sourceMappingURL=home.css.map */

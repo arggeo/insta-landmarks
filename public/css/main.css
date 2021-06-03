@@ -1,0 +1,247 @@
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+figure {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+body {
+  font-family: "Manrope", sans-serif;
+  color: #222;
+  background-color: #fff;
+  position: relative;
+}
+
+a {
+  color: #e0237d;
+  text-decoration: none;
+}
+a:hover {
+  color: #222;
+}
+
+#header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+#header .branding {
+  display: flex;
+  justify-content: center;
+  padding: 2rem 0;
+  position: relative;
+}
+#header .branding .logo {
+  text-align: center;
+}
+#header .branding .logo h1 {
+  display: inline-block;
+  vertical-align: middle;
+  font-weight: bold;
+  color: #e0237d;
+  font-size: 3.2rem;
+}
+#header .branding .logo img {
+  vertical-align: middle;
+  width: 60px;
+}
+#header .menu {
+  display: none;
+}
+#header .menu ul {
+  list-style: none;
+}
+#header .menu a {
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: #222;
+  display: inline-block;
+  padding: 2rem;
+  text-transform: uppercase;
+}
+#header .menu a:hover {
+  color: #e0237d;
+  background-color: #f5f5f5;
+}
+
+#toggler {
+  width: 80px;
+  height: 80px;
+  display: block;
+  font-size: 40px;
+  line-height: 80px;
+  text-align: center;
+  color: #222;
+  position: absolute;
+  top: 0;
+  right: 1rem;
+  transform: translateY(25%);
+  z-index: 999;
+}
+#toggler:hover {
+  color: #e0237d;
+}
+
+#main {
+  padding: 2rem;
+  background-color: #f5f5f5;
+}
+
+#main-title-wrapper {
+  text-align: center;
+  font-style: italic;
+  padding: 2rem 0;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: left center;
+}
+#main-title-wrapper h3 {
+  font-size: 3.2rem;
+  padding: 7rem;
+  color: #e0237d;
+}
+
+#landmarks {
+  border-radius: 3rem;
+}
+
+#edit-landmark {
+  display: block;
+  width: 60px;
+  height: 60px;
+  background-color: #e0237d;
+  border-radius: 100%;
+  font-size: 3rem;
+  color: #fff;
+  text-align: center;
+  line-height: 60px;
+  position: absolute;
+  right: -1rem;
+  top: -2rem;
+}
+
+#footer {
+  padding: 2rem 0;
+  font-size: 2rem;
+  text-align: center;
+}
+
+#side-menu {
+  width: 40%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  transform: translateX(110%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+  padding: 2rem;
+  transition: all 0.4s ease-in-out;
+}
+#side-menu.active {
+  transform: translateX(0);
+}
+#side-menu ul {
+  list-style: none;
+}
+#side-menu ul a {
+  font-size: 2.6rem;
+  text-transform: uppercase;
+  display: inline-block;
+  padding: 1rem;
+}
+
+#not-found {
+  width: 50%;
+  margin: auto;
+}
+#not-found h2 {
+  font-size: 8rem;
+  color: #e0237d;
+}
+#not-found h3 {
+  font-size: 4rem;
+}
+#not-found a {
+  font-size: 2rem;
+  display: inline-block;
+  margin-top: 2rem;
+}
+
+@media screen and (min-width: 769px) {
+  #header .branding .logo h1 {
+    font-size: 5.2rem;
+  }
+  #header .menu {
+    display: block;
+    justify-content: center;
+    border-top: 1px dashed #eee;
+  }
+  #header .menu ul {
+    display: flex;
+    justify-content: center;
+  }
+
+  #toggler {
+    display: none;
+  }
+
+  .slogan {
+    background-image: url("../assets/liberty.svg");
+  }
+
+  #main {
+    padding: 2rem 5rem;
+  }
+
+  #main-title-wrapper h3 {
+    font-size: 4.2rem;
+    margin: 7rem 0;
+    background-repeat: no-repeat;
+    background-position: 60% center;
+  }
+
+  #landmarks {
+    padding: 2rem;
+    border: 2px solid #eee;
+    border-bottom-width: 6px;
+    background-color: #fff;
+  }
+
+  #edit-landmark {
+    right: -3rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  #main {
+    padding: 10rem 20rem;
+  }
+
+  #landmarks {
+    padding: 5rem;
+  }
+}
+@media screen and (min-width: 1920px) {
+  #main-title-wrapper h3 {
+    color: #fff;
+    background-image: url("../assets/stroke.svg");
+  }
+}
+
+/*# sourceMappingURL=main.css.map */

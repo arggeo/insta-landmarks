@@ -1,0 +1,77 @@
+@import "variables";
+
+form {
+  width: 100%;
+  background-color: #fff;
+  border: 2px solid #eee;
+  border-radius: 2em;
+  margin: auto;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+
+  input[type="text"],
+  input[type="password"] {
+    display: block;
+    margin: 1rem 0;
+    padding: 1.5rem 2rem;
+    font-size: 1.8rem;
+    background-color: #f9f9f9;
+    border: 2px dashed #eee;
+    border-radius: .5em;
+    transition: border-color 0.2s ease-in-out;
+
+    &:hover,
+    &:focus {
+      border-color: $primary_color;
+    }
+  }
+
+  textarea {
+    margin: 1rem 0;
+    padding: 1.5rem 2rem;
+    font-size: 1.8rem;
+    background-color: #f9f9f9;
+    border: 2px dashed #eee;
+    border-radius: .5em;
+    transition: border-color 0.2s ease-in-out;
+    font-family: "Manrope", sans-serif;
+
+    &:hover,
+    &:focus {
+      border-color: $primary_color;
+    }
+  }
+
+  input[type="submit"] {
+    padding: 1.5rem 2rem;
+    margin: 1rem 0;
+    border-radius: .5em;
+    background-color: $primary_color;
+    color: #fff;
+    border: none;
+    font-size: 1.8rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+
+    &:hover {
+      background-color: #222;
+    }
+  }
+
+  label {
+    font-size: 2rem;
+    font-weight: bold;
+    color: $primary_color;
+    margin-top: 1rem;
+  }
+
+  &#landmark-edit {
+    max-width: 100rem;
+  }
+
+  &#login {
+    max-width: 50rem;
+  }
+}

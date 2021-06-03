@@ -1,0 +1,23 @@
+<%- include('partials/head.ejs') %>
+        <link rel="stylesheet" href="/css/home.css">
+        <script src="/js/popup.js" defer></script>
+    </head>
+    <body>
+        <%- include('partials/header.ejs') %>
+        <div id="main">
+            <div id="main-title-wrapper" class="slogan">
+                <h3>Wherever you go,<br>there is something extraordinary to see!</h3>
+            </div>
+            <div id="landmarks">
+                <% for (let landmark of landmarks) { %>
+                    <%- include('partials/landmark-loop-item.ejs', { landmark }) %>
+                <% } %>
+            </div>
+        </div>
+        <div id="popup-container">
+            <div class="popup">
+                <figure><img src="#"></figure>
+                <span class="close">&#10006;</span>
+            </div>
+        </div>
+<%- include('partials/footer.ejs') %>

@@ -1,0 +1,18 @@
+<%- include('partials/head.ejs') %>
+        <link rel="stylesheet" href="/css/home.css">
+        <link rel="stylesheet" href="/css/forms.css">
+    </head>
+    <body>
+        <%- include('partials/header.ejs') %>
+        <div id="main">
+            <form action="/admin/edit-landmark/<%= landmark.objectId %>" method="POST" id="landmark-edit">
+                <label for="title">Title</label>
+                <input id="title" type="text" name="title" value="<%= landmark.title  %>">
+                <label for="short_info">Short description</label>
+                <textarea id="short_info" name="short_info" cols="30" rows="10"><%= landmark.short_info %></textarea>
+                <label for="description">Description</label>
+                <textarea id="description" name="description" cols="30" rows="10"><%= landmark.description %></textarea>
+                <input type="submit" value="Update">
+            </form>
+        </div>
+<%- include('partials/footer.ejs') %>

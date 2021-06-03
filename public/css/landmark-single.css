@@ -1,0 +1,40 @@
+#landmark-body {
+  position: relative;
+  padding: 2rem;
+  border: 2px solid #eee;
+  border-bottom-width: 6px;
+  border-radius: 3rem;
+  background-color: #fff;
+}
+#landmark-body figure {
+  border-radius: 2em;
+}
+#landmark-body figure img {
+  border-radius: 2em;
+}
+#landmark-body .date {
+  font-size: 2rem;
+  font-style: italic;
+  display: inline-block;
+  margin: 2.5rem 0;
+}
+#landmark-body .date b {
+  color: #e0237d;
+}
+#landmark-body .source {
+  font-size: 2rem;
+  font-style: italic;
+}
+#landmark-body p {
+  font-size: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+@media screen and (min-width: 768px) {
+  #main-title-wrapper h3 {
+    color: #fff;
+    background-image: url("../assets/stroke.svg");
+  }
+}
+
+/*# sourceMappingURL=landmark-single.css.map */

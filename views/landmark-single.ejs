@@ -1,0 +1,27 @@
+<%- include('partials/head.ejs') %>
+        <link rel="stylesheet" href="/css/landmark-single.css">
+    </head>
+    <body>
+        <%- include('partials/header.ejs') %>
+        <div id="main">
+            <div id="single-landmark">
+                <div id="main-title-wrapper">
+                    <h3><%= landmark.title %></h3>
+                </div>
+                <div id="landmark-body">
+                    <figure>
+                        <img src="<%= landmark.photo.url %>" alt="">
+                    </figure>
+                    <div class="info">
+                        <span class="date">Published on: <b><%= new Date(landmark.createdAt).toLocaleString("en-US"); %></b></span>
+                        <p><%= landmark.short_info %></p>
+                        <p><%= landmark.description %></p>
+                        <span class="source">Source: <a href="<%= landmark.url %>" target="_blank">View</a></span>
+                    </div>
+                    <% if (locals.userInfo) { %>
+                        <a id="edit-landmark" href="/admin/edit-landmark/<%= landmark.objectId %>">&#9998;</a>
+                    <% } %>
+                </div>
+            </div>
+        </div>
+<%- include('partials/footer.ejs') %>

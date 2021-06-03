@@ -1,0 +1,68 @@
+form {
+  width: 100%;
+  background-color: #fff;
+  border: 2px solid #eee;
+  border-radius: 2em;
+  margin: auto;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+form input[type=text],
+form input[type=password] {
+  display: block;
+  margin: 1rem 0;
+  padding: 1.5rem 2rem;
+  font-size: 1.8rem;
+  background-color: #f9f9f9;
+  border: 2px dashed #eee;
+  border-radius: 0.5em;
+  transition: border-color 0.2s ease-in-out;
+}
+form input[type=text]:hover, form input[type=text]:focus,
+form input[type=password]:hover,
+form input[type=password]:focus {
+  border-color: #e0237d;
+}
+form textarea {
+  margin: 1rem 0;
+  padding: 1.5rem 2rem;
+  font-size: 1.8rem;
+  background-color: #f9f9f9;
+  border: 2px dashed #eee;
+  border-radius: 0.5em;
+  transition: border-color 0.2s ease-in-out;
+  font-family: "Manrope", sans-serif;
+}
+form textarea:hover, form textarea:focus {
+  border-color: #e0237d;
+}
+form input[type=submit] {
+  padding: 1.5rem 2rem;
+  margin: 1rem 0;
+  border-radius: 0.5em;
+  background-color: #e0237d;
+  color: #fff;
+  border: none;
+  font-size: 1.8rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+form input[type=submit]:hover {
+  background-color: #222;
+}
+form label {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #e0237d;
+  margin-top: 1rem;
+}
+form#landmark-edit {
+  max-width: 100rem;
+}
+form#login {
+  max-width: 50rem;
+}
+
+/*# sourceMappingURL=forms.css.map */

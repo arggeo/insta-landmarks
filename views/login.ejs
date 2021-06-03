@@ -1,0 +1,14 @@
+<%- include('partials/head.ejs') %>
+        <link rel="stylesheet" href="/css/home.css">
+        <link rel="stylesheet" href="/css/forms.css">
+    </head>
+    <body>
+        <%- include('partials/header.ejs') %>
+        <div id="main">
+            <form action="/admin/login" method="post" id="login">
+                <input type="text" name="username" placeholder="username">
+                <input type="password" name="password" placeholder="password">
+                <input type="submit" value="Login">
+            </form>
+        </div>
+<%- include('partials/footer.ejs') %>

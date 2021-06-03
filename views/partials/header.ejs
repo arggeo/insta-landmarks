@@ -1,0 +1,22 @@
+<div id="header">
+    <div class="branding">
+        <div class="logo">
+            <a href="/">
+                <img src="/assets/map_pin.svg" width="64" alt="Insta Landmarks">
+                <h1>Insta Landmarks</h1>
+            </a>
+        </div>
+    </div>
+    <%=  %>
+    <div class="menu">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <% if (locals.userInfo) { %>
+                <li><a href="/admin/logout">Logout: <%= locals.userInfo.username %></a></li>
+            <% } else { %>
+                <li><a href="/admin/login">Login</a></li>
+            <% } %>
+        </ul>
+    </div>
+    <a id="toggler" href="javascript:void(0)">&#9776;</a>
+</div>

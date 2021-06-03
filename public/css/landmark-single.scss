@@ -1,0 +1,49 @@
+@import "variables";
+
+#landmark-body {
+  position: relative;
+  //padding: 5rem;
+  padding: 2rem;
+  border: 2px solid #eee;
+  border-bottom-width: 6px;
+  border-radius: 3rem;
+  background-color: #fff;
+
+  figure {
+    border-radius: 2em;
+
+    img {
+      border-radius: 2em;
+    }
+  }
+
+  .date {
+    font-size: 2rem;
+    font-style: italic;
+    display: inline-block;
+    margin: 2.5rem 0;
+
+    b {
+      color: $primary_color;
+    }
+  }
+
+  .source {
+    font-size: 2rem;
+    font-style: italic;
+  }
+
+  p {
+    font-size: 2rem;
+    margin-bottom: 2.5rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  #main-title-wrapper {
+    h3 {
+      color: #fff;
+      background-image: url('../assets/stroke.svg');
+    }
+  }
+}
