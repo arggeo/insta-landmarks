@@ -1,13 +1,24 @@
 const axios = require('axios');
+const { validationResult } = require('express-validator');
 
 exports.getLogin = (req, res, next) => {
    if (req.session.loggedState) {
       res.status(301).redirect('/');
    }
-   res.render('login');
+   res.render('login', {
+      errors: []
+   });
 }
 
 exports.postLogin = async (req, res, next) => {
+   const errors = validationResult(req);
+
+   if (!errors.isEmpty()) {
+      return res.status(422).render('login', {
+         errors: errors.array()
+      });
+   }
+
    try {
       const resp = await axios.post('https://firefighter-5325.instashop.ae/api/users/login', {
          "username": req.body.username,
@@ -34,11 +45,22 @@ exports.getLogout = (req, res, next) => {
 exports.getEdit = async (req, res, next) => {
    const rawData = await axios.get('https://firefighter-5325.instashop.ae/api/landmarks/' + req.params.id);
    res.render('landmark-edit', {
-      landmark: rawData.data
+      landmark: rawData.data,
+      errors: []
    });
 }
 
 exports.postEdit = async (req, res, next) => {
+   const errors = validationResult(req);
+
+   if (!errors.isEmpty()) {
+      const rawData = await axios.get('https://firefighter-5325.instashop.ae/api/landmarks/' + req.params.id);
+      return res.status(422).render('landmark-edit', {
+         landmark: rawData.data,
+         errors: errors.array()
+      });
+   }
+
    try {
       const rawData = await axios.put('https://firefighter-5325.instashop.ae/api/landmarks/' + req.params.id, {
          title: req.body.title,

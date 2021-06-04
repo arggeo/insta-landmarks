@@ -5,6 +5,11 @@
     <body>
         <%- include('partials/header.ejs') %>
         <div id="main">
+            <% if (!(errors.length === 0)) { %>
+                <% for (let error of errors) { %>
+                    <div class="error-msg"><%= error.msg %></div>
+                <% } %>
+            <% } %>
             <form action="/admin/edit-landmark/<%= landmark.objectId %>" method="POST" id="landmark-edit">
                 <label for="title">Title</label>
                 <input id="title" type="text" name="title" value="<%= landmark.title  %>">

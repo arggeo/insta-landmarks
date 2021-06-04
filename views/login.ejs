@@ -5,6 +5,11 @@
     <body>
         <%- include('partials/header.ejs') %>
         <div id="main">
+            <% if (!(errors.length === 0)) { %>
+                <% for (let error of errors) { %>
+                    <div class="error-msg"><%= error.msg %></div>
+                <% } %>
+            <% } %>
             <form action="/admin/login" method="post" id="login">
                 <input type="text" name="username" placeholder="username">
                 <input type="password" name="password" placeholder="password">
