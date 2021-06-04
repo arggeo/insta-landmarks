@@ -43,11 +43,17 @@ exports.getLogout = (req, res, next) => {
 }
 
 exports.getEdit = async (req, res, next) => {
-   const rawData = await axios.get('https://firefighter-5325.instashop.ae/api/landmarks/' + req.params.id);
-   res.render('landmark-edit', {
-      landmark: rawData.data,
-      errors: []
-   });
+   try {
+      const rawData = await axios.get('https://firefighter-5325.instashop.ae/api/landmarks/' + req.params.id);
+      res.render('landmark-edit', {
+         landmark: rawData.data,
+         errors: []
+      });
+   } catch (err) {
+      // console.log(err);
+      res.status(301).redirect('/landmark/' + req.params.id);
+   }
+
 }
 
 exports.postEdit = async (req, res, next) => {
@@ -66,14 +72,10 @@ exports.postEdit = async (req, res, next) => {
          title: req.body.title,
          short_info: req.body.short_info,
          description: req.body.description,
-      }, {
-         headers: {
-            "content-type": "application/json",
-            "Authorization": `Bearer ${req.session.loggedState.sessionToken.split(':')[1]}`
-         }
       });
       res.status(301).redirect('/landmark/' + req.params.id);
    } catch (err) {
+      // console.log(err);
       if (err.response.status === 401) {
          return res.status(301).redirect('/landmark/' + req.params.id);
       }

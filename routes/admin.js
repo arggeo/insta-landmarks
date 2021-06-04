@@ -8,7 +8,7 @@ const adminController = require('../controllers/admin');
 router.get('/login', adminController.getLogin);
 
 router.post('/login',
-   body('username').isAlpha().withMessage('Username can only contain characters (not numbers & symbols)').isLength({ min: 5 }).withMessage('Username must be at least 5 characters long'),
+   body('username').isAlpha().withMessage('Username can only contain characters (not numbers - symbols)').isLength({ min: 5 }).withMessage('Username must be at least 5 characters long'),
    body('password').isLength({ min: 5 }).withMessage('Password must be at least 5 characters long'),
    adminController.postLogin);
 

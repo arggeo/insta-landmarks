@@ -6,7 +6,6 @@ const app = express();
 const session = require('express-session');
 
 const bodyParser = require('body-parser');
-const axios = require('axios');
 const csrf = require('csurf');
 
 const frontRoutes = require('./routes/front');
@@ -17,7 +16,7 @@ const csrfProtection = csrf();
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(session({ secret: process.env.SESSION_SECRET, resave: false, saveUninitialized: true }));
+app.use(session({ secret: 'test', resave: false, saveUninitialized: true }));
 app.use(csrfProtection);
 app.use(dataTransfer);
 
