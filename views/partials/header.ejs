@@ -11,8 +11,8 @@
     <div class="menu">
         <ul>
             <li><a href="/">Home</a></li>
-            <% if (locals.userInfo) { %>
-                <li><a href="/admin/logout">Logout: <%= locals.userInfo.username %></a></li>
+            <% if (userInfo) { %>
+                <li><a href="/admin/logout">Logout: <%= userInfo.username %></a></li>
             <% } else { %>
                 <li><a href="/admin/login">Login</a></li>
             <% } %>

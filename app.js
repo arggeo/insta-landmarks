@@ -7,14 +7,18 @@ const session = require('express-session');
 
 const bodyParser = require('body-parser');
 const axios = require('axios');
+const csrf = require('csurf');
 
 const frontRoutes = require('./routes/front');
 const adminRoutes = require('./routes/admin');
 const { dataTransfer } = require('./middleware/locals');
 
+const csrfProtection = csrf();
+
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(session({ secret: process.env.SESSION_SECRET, resave: false, saveUninitialized: true }));
+app.use(csrfProtection);
 app.use(dataTransfer);
 
 app.set('view engine', 'ejs');

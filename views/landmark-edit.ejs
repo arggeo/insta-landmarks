@@ -12,6 +12,7 @@
                 <textarea id="short_info" name="short_info" cols="30" rows="10"><%= landmark.short_info %></textarea>
                 <label for="description">Description</label>
                 <textarea id="description" name="description" cols="30" rows="10"><%= landmark.description %></textarea>
+                <input type="hidden" name="_csrf" value="<%= csrfToken %>">
                 <input type="submit" value="Update">
             </form>
         </div>
