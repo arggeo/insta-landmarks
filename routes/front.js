@@ -1,20 +1,10 @@
 const express = require('express');
 const router = express.Router();
 
-const axios = require('axios');
+const frontController = require('../controllers/front');
 
-router.get('/landmark/:id', async (req, res, next) => {
-   const rawData = await axios.get('https://firefighter-5325.instashop.ae/api/landmarks/' + req.params.id);
-   res.render('landmark-single', {
-      landmark: rawData.data
-   });
-});
+router.get('/landmark/:id', frontController.getSingle);
 
-router.get('/', async (req, res, next) => {
-   const rawData = await axios.get('https://firefighter-5325.instashop.ae/api/landmarks');
-   res.render('index', {
-      landmarks: rawData.data
-   });
-});
+router.get('/', frontController.getIndex);
 
 module.exports = router;
